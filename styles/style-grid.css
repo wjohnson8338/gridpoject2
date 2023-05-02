@@ -3,37 +3,43 @@
 
 .testimonial-grid {
     display: grid;
-    grid-auto-columns: 1fr;
-    grid-template-areas:
-        'one'
-        'two'
-        'three'
-        'four'
-        'five';
-}
+     gap: 1.5em;
+     grid-template-areas: /* Mobile layout - single column */
+         'one'
+         'two'
+         'three'
+         'four'
+         'five';
+ }
+ 
 
-
-.testimonial:nth-child(1) {
+ .testimonial:nth-child(1) {
     grid-area: one;
 }
-
 .testimonial:nth-child(2) {
     grid-area: two;
 }
-
 .testimonial:nth-child(3) {
     grid-area: three;
 }
-
 .testimonial:nth-child(4) {
     grid-area: four;
 }
-
-testimonial
-
-@media only screen and (min-width: 50em) {
+.testimonial:nth-child(5) {
+    grid-area: five;
+}
+@media (min-width: 30em) {
     .testimonial-grid {
-        grid-template-areas:
+        grid-template-areas: /* Each row represents a row in the layout - this layout has 4 rows and 2 columns */
+       'one one'
+       'two five'
+       'three five'
+       'four four';
+    }
+}
+@media (min-width: 50em) {
+    .testimonial-grid {
+        grid-template-areas: 
             'one one two five'
             'three four four five';
     }
