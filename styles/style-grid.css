@@ -1,0 +1,40 @@
+/* add grid styles here */
+
+
+.testimonial-grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+}
+
+
+.testimonial:nth-child(1) {
+    grid-area: one;
+}
+
+.testimonial:nth-child(2) {
+    grid-area: two;
+}
+
+.testimonial:nth-child(3) {
+    grid-area: three;
+}
+
+.testimonial:nth-child(4) {
+    grid-area: four;
+}
+
+testimonial
+
+@media only screen and (min-width: 50em) {
+    .testimonial-grid {
+        grid-template-areas:
+            'one one two five'
+            'three four four five';
+    }
+}
